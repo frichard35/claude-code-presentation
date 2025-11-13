@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create slidev@latest)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(public/videos/README.md)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
