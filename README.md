@@ -32,17 +32,17 @@ The built presentation will be in the `dist/` folder. You can:
 
 ## 🖼️ Visual Content
 
-**Note**: Videos have been removed from the presentation due to potential lag issues for live/remote audiences. Instead, the presentation will feature an **image carousel** at the beginning to showcase Claude Code features.
+**Note**: Videos have been removed from the presentation due to potential lag issues for live/remote audiences. Instead, the presentation features an **image carousel** at the beginning to showcase Claude Code features.
 
-### Adding Image Carousel (To Be Implemented)
+### Image Carousel
 
-The image carousel will be added at the start of the presentation to show:
-- Screenshots of Claude Code interface
-- Key features in action
+The presentation includes a high-quality image carousel (slide 2) with 46 screenshots showing:
+- Claude Code interface and features
+- Key capabilities in action
 - Workflow examples
 - Context management visuals
 
-Images should be placed in `public/images/` directory (format: PNG/JPG, recommended resolution: 1920x1080).
+Images are stored in `public/carousel1/` directory (high-quality JPG format). Navigate through the carousel using arrow keys or presentation remote.
 
 ## 📊 Presentation Structure
 
@@ -96,13 +96,13 @@ Each slide can have its own `<style>` block for custom CSS.
 ## 📦 What's Included
 
 - ✅ 25+ professionally designed slides
+- ✅ High-quality image carousel (46 screenshots)
 - ✅ Mermaid diagrams for workflows
 - ✅ Custom styled cards and layouts
 - ✅ Smooth animations with v-click
 - ✅ Hallucination demonstration (crossed-out .claudeignore)
 - ✅ Offline-ready build
 - ✅ Fully responsive design
-- ⏳ Image carousel (to be implemented)
 
 ## 📝 Editing Tips
 
@@ -118,7 +118,7 @@ Each slide can have its own `<style>` block for custom CSS.
 2. **Backup plan**: Have the dev server running as backup
 3. **Timing**: Each section has suggested timing - practice to stay on track
 4. **Interactive elements**: Use click animations to reveal the hallucination example
-5. **Image carousel**: Will be added at the beginning for visual demonstrations
+5. **Image carousel**: Navigate through 46 high-quality screenshots at the beginning (slide 2)
 
 ## 🐛 Troubleshooting
 

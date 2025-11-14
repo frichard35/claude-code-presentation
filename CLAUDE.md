@@ -11,7 +11,7 @@ A 20-minute presentation about Claude Code, built WITH Claude Code (meta!), for 
 ## Technical Stack
 - **Primary**: Slidev (Vue-based, markdown slides)
 - **Deployment**: Local file (no server required)
-- **Visuals**: Image carousel at beginning (to be implemented)
+- **Visuals**: Image carousel with high-quality screenshots (46 images)
 
 ## Presentation Outline
 
@@ -83,21 +83,23 @@ Key insights:
 - ✅ Offline functionality verified
 - ✅ Ready for browser testing
 
+### Phase 5: Image Carousel ✅ COMPLETED
+- ✅ Created carousel component with 46 high-quality images
+- ✅ Integrated at beginning of presentation (slide 2)
+- ✅ Native Slidev navigation with keyboard/remote support
+- ✅ Images upgraded to higher quality for better visual experience
+- ✅ Counter display showing progress (X / 46)
+
 ## Next Steps
 
-1. **Add Image Carousel** (To be implemented):
-   - Create carousel component at beginning of presentation
-   - Add screenshots/images to `public/images/` directory
-   - Show Claude Code features visually without video lag
-   - Recommended image specs: 1920x1080, PNG/JPG format
-
-2. **Test the Presentation**:
+1. **Test the Presentation**:
    - Open `dist/index.html` in your browser
    - Practice the timing (~20 minutes)
    - Test hallucination animation reveals
    - Verify offline functionality
+   - Navigate through carousel images
 
-3. **Final Polish**:
+2. **Final Polish**:
    - Edit `slides.md` to adjust content as needed
    - Update personal details in Q&A slide
    - Run `npm run dev` for live preview while editing

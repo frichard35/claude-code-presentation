@@ -457,7 +457,7 @@ Different workflows for different needs
 <img src="/images/context.jpg" alt="Context usage breakdown" class="context-image rounded shadow-lg" />
 </div>
 
-<div v-click class="mt-4 p-4 bg-blue-500 bg-opacity-20 rounded">
+<div v-click class="mt-4 p-4 bg-green-600 bg-opacity-20 rounded">
 <strong>Key insight:</strong> Context is often the limiting factor in AI coding
 </div>
 
