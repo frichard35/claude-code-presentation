@@ -1,29 +1,136 @@
 ---
 theme: seriph
-background: https://cover.sli.dev
 title: Claude Code - Experience Feedback
 info: |
   ## Claude Code Experience Feedback
   A 20-minute presentation about using Claude Code for software development
-class: text-center
+class: text-center hero-slide
 drawings:
   persist: false
 transition: slide-left
 mdc: true
 duration: 20min
+fonts:
+  sans: 'Inter'
+  serif: 'Inter'
+  mono: 'Fira Code'
+css: unocss
 ---
 
-# Claude Code
+<div class="hero-background"></div>
 
-## Experience Feedback
-
-A journey through AI-powered development
+<div class="hero-content">
+  <h1 class="hero-title">Claude Code</h1>
+  <h2 class="hero-subtitle">Experience Feedback</h2>
+  <p class="hero-description">A journey through AI-powered development</p>
+</div>
 
 <div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover:bg="white op-10">
+  <span @click="$slidev.nav.next" class="px-4 py-2 rounded-lg cursor-pointer hero-button">
     Press Space for next page <carbon:arrow-right class="inline"/>
   </span>
 </div>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+/* Global background for all pages */
+html {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+}
+
+html::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0, 156, 109, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 156, 109, 0.06) 0%, transparent 50%),
+    linear-gradient(90deg, rgba(0, 156, 109, 0.015) 1px, transparent 1px),
+    linear-gradient(rgba(0, 156, 109, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body,
+#slideshow,
+.slidev-page,
+.slidev-layout {
+  background: transparent !important;
+}
+
+.hero-slide {
+  position: relative;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #009c6d 0%, #006b4d 100%);
+  z-index: -1;
+}
+
+.hero-content {
+  margin-top: 8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+  filter: drop-shadow(0 2px 40px rgba(255, 255, 255, 0.3));
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.03em;
+}
+
+.hero-button {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+</style>
 
 ---
 layout: center
@@ -138,13 +245,13 @@ transition: slide-up
 .timeline-marker {
   min-width: 80px;
   font-weight: bold;
-  color: #4EC5D4;
+  color: #8dc9ab;
   font-size: 1.1rem;
 }
 .timeline-content {
   flex: 1;
   padding-left: 2rem;
-  border-left: 2px solid #4EC5D4;
+  border-left: 2px solid #8dc9ab;
 }
 </style>
 
@@ -204,7 +311,7 @@ Different workflows for different needs
 
 <style>
 .mode-card {
-  border: 2px solid #4EC5D4;
+  border: 2px solid #8dc9ab;
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
@@ -216,7 +323,7 @@ Different workflows for different needs
 .mode-usage {
   margin-top: 1rem;
   padding-top: 0.5rem;
-  border-top: 1px solid #4EC5D4;
+  border-top: 1px solid #8dc9ab;
   font-size: 0.75rem;
   font-weight: bold;
   opacity: 0.8;
@@ -412,8 +519,8 @@ graph LR
     E -->|No| A
     E -->|Yes| F[Done]
 
-    style A fill:#4EC5D4
-    style B fill:#4EC5D4
+    style A fill:#8dc9ab
+    style B fill:#8dc9ab
     style C fill:#FFA500
     style D fill:#FFA500
     style F fill:#00FF00
@@ -738,13 +845,13 @@ Lessons learned from real usage
   padding: 0.6rem;
   margin-bottom: 0.6rem;
   background: rgba(78, 197, 212, 0.1);
-  border-left: 4px solid #4EC5D4;
+  border-left: 4px solid #8dc9ab;
   border-radius: 4px;
 }
 .insight-number {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #4EC5D4;
+  color: #8dc9ab;
   margin-right: 0.7rem;
   min-width: 40px;
 }
@@ -793,7 +900,7 @@ The future of coding is <span class="text-gradient">collaborative</span>.
 
 <style>
 .text-gradient {
-  background: linear-gradient(45deg, #4EC5D4, #146b8c);
+  background: linear-gradient(45deg, #8dc9ab, #146b8c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -809,7 +916,7 @@ The future of coding is <span class="text-gradient">collaborative</span>.
   transform: translateY(8px);
 }
 .engineer-replacement {
-  color: #4EC5D4;
+  color: #8dc9ab;
   font-weight: bold;
   margin-left: 0.5rem;
 }
@@ -861,3 +968,42 @@ class: text-center
 </div>
 
 <PoweredBySlidev mt-10 />
+
+<!-- Global styles for all slides -->
+<style global>
+/* Override UnoCSS default white background */
+html, body, #app, #page-root {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+}
+
+/* Add subtle texture overlay */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(0, 156, 109, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 156, 109, 0.06) 0%, transparent 50%),
+    linear-gradient(90deg, rgba(0, 156, 109, 0.015) 1px, transparent 1px),
+    linear-gradient(rgba(0, 156, 109, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 60px 60px, 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep slideshow content above overlay */
+#slideshow {
+  position: relative;
+  z-index: 1;
+}
+
+/* Make slides transparent to show background */
+.slidev-page:not(.slidev-page-1),
+.slidev-page:not(.slidev-page-1) .slidev-layout {
+  background: transparent !important;
+}
+</style>
+
