@@ -134,6 +134,117 @@ body,
 
 ---
 layout: center
+class: carousel-slide
+clicks: 46
+---
+
+<div class="carousel-container">
+  <img v-if="$slidev.nav.clicks === 0" src="/carousel1/thumb001.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 1" src="/carousel1/thumb002.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 2" src="/carousel1/thumb003.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 3" src="/carousel1/thumb004.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 4" src="/carousel1/thumb005.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 5" src="/carousel1/thumb006.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 6" src="/carousel1/thumb007.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 7" src="/carousel1/thumb008.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 8" src="/carousel1/thumb009.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 9" src="/carousel1/thumb010.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 10" src="/carousel1/thumb011.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 11" src="/carousel1/thumb012.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 12" src="/carousel1/thumb013.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 13" src="/carousel1/thumb014.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 14" src="/carousel1/thumb015.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 15" src="/carousel1/thumb016.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 16" src="/carousel1/thumb017.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 17" src="/carousel1/thumb018.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 18" src="/carousel1/thumb019.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 19" src="/carousel1/thumb020.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 20" src="/carousel1/thumb021.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 21" src="/carousel1/thumb022.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 22" src="/carousel1/thumb023.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 23" src="/carousel1/thumb024.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 24" src="/carousel1/thumb025.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 25" src="/carousel1/thumb026.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 26" src="/carousel1/thumb027.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 27" src="/carousel1/thumb028.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 28" src="/carousel1/thumb029.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 29" src="/carousel1/thumb030.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 30" src="/carousel1/thumb031.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 31" src="/carousel1/thumb032.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 32" src="/carousel1/thumb033.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 33" src="/carousel1/thumb034.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 34" src="/carousel1/thumb035.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 35" src="/carousel1/thumb036.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 36" src="/carousel1/thumb037.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 37" src="/carousel1/thumb038.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 38" src="/carousel1/thumb039.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 39" src="/carousel1/thumb040.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 40" src="/carousel1/thumb041.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 41" src="/carousel1/thumb042.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 42" src="/carousel1/thumb043.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 43" src="/carousel1/thumb044.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 44" src="/carousel1/thumb045.jpg" class="carousel-image" />
+  <img v-if="$slidev.nav.clicks === 45" src="/carousel1/thumb046.jpg" class="carousel-image" />
+
+  <div class="carousel-controls">
+    <div class="carousel-counter">{{ $slidev.nav.clicks + 1 }} / 46</div>
+    <div class="carousel-hint">Use arrow keys or remote to navigate</div>
+  </div>
+</div>
+
+<style>
+.carousel-slide {
+  background: #000 !important;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-image {
+  max-width: 90%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-controls {
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.carousel-counter {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.carousel-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+</style>
+
+---
+layout: center
 class: text-center
 ---
 
