@@ -30,29 +30,19 @@ The built presentation will be in the `dist/` folder. You can:
 - Copy the entire `dist/` folder to share
 - Host the `dist/` folder on any web server
 
-## 🎥 Adding Your Videos
+## 🖼️ Visual Content
 
-The presentation includes placeholders for 5 demo videos. Replace the empty placeholder files in `public/videos/` with your actual MP4 recordings:
+**Note**: Videos have been removed from the presentation due to potential lag issues for live/remote audiences. Instead, the presentation will feature an **image carousel** at the beginning to showcase Claude Code features.
 
-1. **demo-memory-files.mp4** - Demonstrating CLAUDE.md and .claudeignore usage
-2. **demo-modes.mp4** - Switching between Default, Accept Edits, and Plan modes
-3. **demo-context.mp4** - Managing context effectively
-4. **demo-iterations.mp4** - Watching Claude Code iterate on a feature
-5. **demo-mcp.mp4** - Using MCP modules to integrate external tools
+### Adding Image Carousel (To Be Implemented)
 
-### Video Recording Tips
+The image carousel will be added at the start of the presentation to show:
+- Screenshots of Claude Code interface
+- Key features in action
+- Workflow examples
+- Context management visuals
 
-For best results:
-- **Resolution**: 1920x1080 or 1280x720
-- **Format**: MP4 (H.264 codec)
-- **Duration**: 30-60 seconds per video
-- **Content**: Screen recordings showing Claude Code in action
-- **Audio**: Optional but recommended for narration
-
-You can use tools like:
-- macOS: QuickTime Player (Cmd+Ctrl+N for screen recording)
-- Windows: Xbox Game Bar (Win+G)
-- Cross-platform: OBS Studio
+Images should be placed in `public/images/` directory (format: PNG/JPG, recommended resolution: 1920x1080).
 
 ## 📊 Presentation Structure
 
@@ -62,9 +52,8 @@ slides.md (30+ slides)
 ├── Part 1: History (3 slides)
 │   ├── Timeline of AI coding tools
 │   └── Three eras: ChatGPT → Copilot → Agentic
-├── Part 2: Claude Code (15 slides)
-│   ├── Overview & features
-│   ├── Memory files (CLAUDE.md, .claudeignore)
+├── Part 2: Claude Code (12 slides)
+│   ├── Memory files (CLAUDE.md with hallucination example)
 │   ├── Three modes (Default, Accept Edits, Plan)
 │   ├── Context management
 │   ├── Micro-iteration workflow
@@ -106,13 +95,14 @@ Each slide can have its own `<style>` block for custom CSS.
 
 ## 📦 What's Included
 
-- ✅ 30+ professionally designed slides
+- ✅ 25+ professionally designed slides
 - ✅ Mermaid diagrams for workflows
 - ✅ Custom styled cards and layouts
 - ✅ Smooth animations with v-click
-- ✅ Video embedding support
+- ✅ Hallucination demonstration (crossed-out .claudeignore)
 - ✅ Offline-ready build
 - ✅ Fully responsive design
+- ⏳ Image carousel (to be implemented)
 
 ## 📝 Editing Tips
 
@@ -124,23 +114,17 @@ Each slide can have its own `<style>` block for custom CSS.
 
 ## 🎬 Presentation Tips
 
-1. **Practice with videos**: Make sure all videos play correctly
-2. **Test offline**: Build and test the `dist/` version before presenting
-3. **Backup plan**: Have the dev server running as backup
-4. **Timing**: Each section has suggested timing - practice to stay on track
-5. **Interactive elements**: Mermaid diagrams and click animations work best in live demo
+1. **Test offline**: Build and test the `dist/` version before presenting
+2. **Backup plan**: Have the dev server running as backup
+3. **Timing**: Each section has suggested timing - practice to stay on track
+4. **Interactive elements**: Use click animations to reveal the hallucination example
+5. **Image carousel**: Will be added at the beginning for visual demonstrations
 
 ## 🐛 Troubleshooting
-
-### Videos not playing
-- Ensure video files are in `public/videos/`
-- Check video codec (should be H.264 MP4)
-- Try opening in a different browser
 
 ### Build fails
 - Run `npm install` again
 - Delete `node_modules` and `package-lock.json`, then reinstall
-- Check that all video files exist (even if empty)
 
 ### Styling looks broken
 - Clear browser cache

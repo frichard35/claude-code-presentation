@@ -4,13 +4,15 @@
       "Bash(npm create slidev@latest)",
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
-      "Bash(public/videos/README.md)"
+      "Bash(public/videos/README.md)",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_take_screenshot"
     ],
     "deny": [],
     "ask": []
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "playwright"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }

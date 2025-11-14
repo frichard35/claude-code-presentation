@@ -78,9 +78,9 @@ transition: slide-up
 
 # The Three Eras of AI Coding
 
-<div class="timeline mt-8">
+<div class="timeline-grid mt-8">
 
-<div v-click class="timeline-item">
+<div v-click="1" class="timeline-item">
   <div class="timeline-marker">2022</div>
   <div class="timeline-content">
     <h3 class="text-xl font-bold">ChatGPT Era</h3>
@@ -93,20 +93,7 @@ transition: slide-up
   </div>
 </div>
 
-<div v-click class="timeline-item">
-  <div class="timeline-marker">2023</div>
-  <div class="timeline-content">
-    <h3 class="text-xl font-bold">GitHub Copilot Era</h3>
-    <p class="text-sm opacity-75">IDE Integration</p>
-    <ul class="text-sm mt-2">
-      <li>Autocomplete-style assistance</li>
-      <li>In-editor suggestions</li>
-      <li>Context-aware completions</li>
-    </ul>
-  </div>
-</div>
-
-<div v-click class="timeline-item">
+<div v-click="3" class="timeline-item">
   <div class="timeline-marker">2024</div>
   <div class="timeline-content">
     <h3 class="text-xl font-bold">Agentic Coding Era</h3>
@@ -120,13 +107,33 @@ transition: slide-up
   </div>
 </div>
 
+<div v-click="2" class="timeline-item timeline-item-full">
+  <div class="timeline-marker">2023</div>
+  <div class="timeline-content">
+    <h3 class="text-xl font-bold">GitHub Copilot Era</h3>
+    <p class="text-sm opacity-75">IDE Integration / Passive collaboration</p>
+    <ul class="text-sm mt-2">
+      <li>Autocomplete-style assistance</li>
+      <li>In-editor suggestions</li>
+      <li>Context-aware completions</li>
+    </ul>
+  </div>
+</div>
+
 </div>
 
 <style>
+.timeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
 .timeline-item {
   display: flex;
-  margin-bottom: 2rem;
   align-items: flex-start;
+}
+.timeline-item-full {
+  grid-column: 1 / -1;
 }
 .timeline-marker {
   min-width: 80px;
@@ -148,159 +155,6 @@ layout: section
 # Part 2: Claude Code
 
 Deep dive into features and workflow
-
----
-transition: fade
----
-
-# What is Claude Code?
-
-<div class="grid grid-cols-2 gap-8 mt-8">
-
-<div>
-
-## Key Features
-
-<v-clicks>
-
-- 🧠 **Agentic AI** - Autonomous task execution
-- 📁 **Multi-file editing** - Comprehensive codebase changes
-- 🔍 **Context management** - Smart file selection
-- ⚡ **Command execution** - Run tests, build, deploy
-- 🔄 **Iterative workflow** - Continuous refinement
-- 🔌 **MCP modules** - Extensible integrations
-
-</v-clicks>
-
-</div>
-
-<div v-click>
-
-## How it Works
-
-```mermaid
-graph TD
-    A[User Request] --> B[Gather Context]
-    B --> C[Modify Code]
-    C --> D[Lint & Check]
-    D --> E[Test & Verify]
-    E --> F{Success?}
-    F -->|No| B
-    F -->|Yes| G[Complete]
-```
-
-</div>
-
-</div>
-
----
-
-# Memory Files
-
-## Controlling Claude Code's behavior
-
-<div class="grid grid-cols-2 gap-8 mt-4">
-
-<div>
-
-### CLAUDE.md
-
-Project-specific instructions and context
-
-```markdown
-# My Project
-
-## Overview
-This is a React + TypeScript project...
-
-## Code Standards
-- Use functional components
-- Prefer const over let
-- Write tests for all features
-
-## Architecture
-- /src/components - React components
-- /src/utils - Utility functions
-```
-
-<v-click>
-
-**Purpose:** Guide Claude's understanding and decisions
-
-</v-click>
-
-</div>
-
-<div>
-
-### .claudeignore
-
-Exclude files from context
-
-```bash
-# Dependencies
-node_modules/
-dist/
-build/
-
-# Large files
-*.log
-*.mp4
-*.zip
-
-# Secrets
-.env
-credentials.json
-```
-
-<v-click>
-
-**Purpose:** Save tokens and protect sensitive data
-
-</v-click>
-
-</div>
-
-</div>
-
----
-
-# Demo: Memory Files in Action
-
-<div class="flex items-center justify-center" style="height: 400px;">
-
-<!-- Video placeholder -->
-<div class="video-placeholder">
-  <video controls width="800" src="/videos/demo-memory-files.mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="video-fallback">
-    📹 Video: Demonstrating CLAUDE.md and .claudeignore usage
-  </div>
-</div>
-
-</div>
-
-<style>
-.video-placeholder {
-  position: relative;
-  background: #1a1a1a;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.video-fallback {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  opacity: 0.5;
-  pointer-events: none;
-}
-video + .video-fallback {
-  display: none;
-}
-</style>
 
 ---
 
@@ -371,23 +225,6 @@ Different workflows for different needs
 
 ---
 
-# Demo: Mode Switching
-
-<div class="flex items-center justify-center" style="height: 450px;">
-
-<div class="video-placeholder">
-  <video controls width="900" src="/videos/demo-modes.mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="video-fallback">
-    📹 Video: Switching between Default, Accept Edits, and Plan modes
-  </div>
-</div>
-
-</div>
-
----
-
 # Context Management
 
 ## The key to success
@@ -396,16 +233,11 @@ Different workflows for different needs
 
 <div>
 
-### Why Context Matters
+### What is context ?
 
-<v-clicks>
-
-- **Token limits** - Claude has a maximum context window
-- **Quality** - More relevant context = better results
-- **Cost** - Tokens = money
-- **Speed** - Less context = faster responses
-
-</v-clicks>
+<div class="mt-8">
+<img src="/images/context.jpg" alt="Context usage breakdown" class="context-image rounded shadow-lg" />
+</div>
 
 <div v-click class="mt-4 p-4 bg-blue-500 bg-opacity-20 rounded">
 <strong>Key insight:</strong> Context is often the limiting factor in AI coding
@@ -413,52 +245,159 @@ Different workflows for different needs
 
 </div>
 
+<div>
+
 <div v-click>
 
-### Strategies
+### Why Context Matters ?
 
-```mermaid {scale: 0.8}
-graph LR
-    A[Task] --> B{Select Files}
-    B --> C[Essential files]
-    B --> D[Related files]
-    C --> E[Add to context]
-    D --> F{Worth tokens?}
-    F -->|Yes| E
-    F -->|No| G[Skip]
-    E --> H[Execute]
+- **Token limits** - Claude has a maximum context window
+- **Quality** - More relevant context = better results
+- **Quality 2** - Smaller context = better results
+- **Cost** - Tokens = money
+
+</div>
+
+<div v-click>
+
+**Best Practices:**
+- `/clear` wipeout your context messages
+- `/compact` resume your context messages
+
+</div>
+
+</div>
+
+</div>
+
+---
+
+
+
+# Memory Files
+
+## Controlling Claude Code's default behavior
+
+<div class="grid grid-cols-2 gap-8 mt-4">
+
+<div>
+
+#### User's CLAUDE.md
+
+```markdown
+# Claude Code - User Preferences
+
+## Core Principles
+- **KISS principle** - Keep designs simple
+- **Implement ONLY what is requested** - No extra features
+- **Test everything** - Use unit tests and Playwright for testing
+- **English only** - All code, comments
 ```
 
-**Best practices:**
-- Use `.claudeignore` aggressively
-- Only include relevant files
-- Remove files when done
-- Use CLAUDE.md for permanent context
+#### Project's CLAUDE.md
+
+```markdown
+## Project Overview
+A 20-minute presentation about Claude Code, built WITH Claude Code (meta!), for sharing experience feedback at the company.
+
+**Target Audience**: Company colleagues (live and remote)
+**Language**: English (all content, code, and interfaces)
+**Format**: Offline HTML presentation (videos removed due to lag concerns)
+
+## Technical Stack
+- **Primary**: Slidev (Vue-based, markdown slides)
+```
 
 </div>
 
+<div class="hallucination-container">
+
+### .claudeignore
+
+Exclude files from context
+
+```bash
+# Dependencies
+node_modules/
+dist/
+build/
+
+# Large files
+*.log
+*.mp4
+*.zip
+
+# Secrets
+.env
+credentials.json
+```
+
+**Purpose:** Save tokens and protect sensitive data
+
+<div v-click class="hallucination-overlay">
+  <div class="hallucination-cross"></div>
+  <div class="hallucination-label">Hallucination</div>
 </div>
+
+</div>
+
+</div>
+
+<style>
+.hallucination-container {
+  position: relative;
+}
+.hallucination-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.hallucination-cross {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to top right,
+      transparent 0%,
+      transparent calc(50% - 3px),
+      rgba(255, 0, 0, 0.8) calc(50% - 3px),
+      rgba(255, 0, 0, 0.8) calc(50% + 3px),
+      transparent calc(50% + 3px),
+      transparent 100%
+    ),
+    linear-gradient(to bottom right,
+      transparent 0%,
+      transparent calc(50% - 3px),
+      rgba(255, 0, 0, 0.8) calc(50% - 3px),
+      rgba(255, 0, 0, 0.8) calc(50% + 3px),
+      transparent calc(50% + 3px),
+      transparent 100%
+    );
+}
+.hallucination-label {
+  position: relative;
+  background: rgba(255, 0, 0, 0.9);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  transform: rotate(-15deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+</style>
 
 ---
 
-# Demo: Context Management
 
-<div class="flex items-center justify-center" style="height: 450px;">
-
-<div class="video-placeholder">
-  <video controls width="900" src="/videos/demo-context.mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="video-fallback">
-    📹 Video: Managing context effectively - adding/removing files, using .claudeignore
-  </div>
-</div>
-
-</div>
-
----
-
-# The Micro-Iteration Workflow
+# The Micro-Iteration Dev Workflow
 
 ## How Claude Code works internally
 
@@ -537,23 +476,6 @@ graph LR
 
 ---
 
-# Demo: Micro-Iterations in Practice
-
-<div class="flex items-center justify-center" style="height: 450px;">
-
-<div class="video-placeholder">
-  <video controls width="900" src="/videos/demo-iterations.mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="video-fallback">
-    📹 Video: Watching Claude Code iterate on a feature - gather, modify, test, loop
-  </div>
-</div>
-
-</div>
-
----
-
 # MCP Modules
 
 ## Model Context Protocol
@@ -568,18 +490,17 @@ graph LR
 
 - **Extension system** for Claude Code
 - **Standardized protocol** for integrations
-- **Custom tools** and data sources
 - **Community-driven** ecosystem
 
 </v-clicks>
 
 <div v-click class="mt-4">
 
-**Popular MCP Servers:**
-- `@modelcontextprotocol/server-filesystem` - File access
-- `@modelcontextprotocol/server-github` - GitHub integration
-- `@modelcontextprotocol/server-postgres` - Database queries
-- Custom servers for APIs, services, etc.
+### Popular MCP Categories
+- Database
+- Cloud Provider
+- SaaS Solution
+- Documentation
 
 </div>
 
@@ -587,56 +508,23 @@ graph LR
 
 <div v-click>
 
-### Example Configuration
+### Example Usages
 
-```json
-{
-  "mcpServers": {
-    "filesystem": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem",
-        "/path/to/allowed/files"
-      ]
-    },
-    "github": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-github"
-      ],
-      "env": {
-        "GITHUB_TOKEN": "your-token"
-      }
-    }
-  }
-}
-```
+- **Postgres MCP**
+  "How many users were created?"
+- **Context7 MCP**
+  "Migrate to Angular 20 using official docs"
+- **AWS MCP**
+  "Deploy to UAT account"
+- **JIRA MCP**
+  "Create a ticket for this issue"
+- **Playwright MCP**
+  "Improve this page design"
 
 </div>
 
 </div>
 
----
-
-# Demo: MCP Modules
-
-<div class="flex items-center justify-center" style="height: 450px;">
-
-<div class="video-placeholder">
-  <video controls width="900" src="/videos/demo-mcp.mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="video-fallback">
-    📹 Video: Using MCP modules to integrate external tools and services
-  </div>
-</div>
-
-</div>
-
----
-layout: section
 ---
 
 # Part 3: Strengths & Weaknesses
@@ -649,7 +537,7 @@ An honest assessment
 
 ## What to watch out for
 
-<div class="mt-4">
+<div class="mt-1">
 
 <div v-click class="weakness-card">
   <div class="weakness-icon">🎭</div>
@@ -685,25 +573,35 @@ An honest assessment
 .weakness-card {
   display: flex;
   align-items: flex-start;
-  padding: 1rem;
-  margin-bottom: 1rem;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
   background: rgba(255, 100, 100, 0.1);
   border-left: 4px solid #ff6464;
   border-radius: 4px;
 }
 .weakness-icon {
-  font-size: 2rem;
-  margin-right: 1rem;
-  min-width: 50px;
+  font-size: 1.6rem;
+  margin-right: 0.7rem;
+  min-width: 40px;
 }
 .weakness-content h3 {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 .weakness-content p, .weakness-content ul {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   opacity: 0.9;
+  line-height: 1.25;
+  margin-bottom: 0.6em;
+}
+.weakness-content ul {
+  margin: 0;
+  margin-bottom: 0.6em;
+  padding-left: 1.2rem;
+}
+.weakness-content li {
+  margin-bottom: 0.1rem;
 }
 </style>
 
@@ -713,13 +611,13 @@ An honest assessment
 
 ## Why it's worth using
 
-<div class="mt-4">
+<div class="mt-1">
 
 <div v-click class="strength-card">
   <div class="strength-icon">⚡</div>
   <div class="strength-content">
-    <h3>Speed of Implementation</h3>
-    <p>What used to take hours can now take minutes. Rapid prototyping and feature development.</p>
+    <h3>Speed of Implementation / Free Code</h3>
+    <p>What used to take hours can now take seconds. Rapid prototyping and feature development.</p>
   </div>
 </div>
 
@@ -728,14 +626,6 @@ An honest assessment
   <div class="strength-content">
     <h3>Quality of Writing</h3>
     <p>Like human language, code might hallucinate, but it's well-written. Clean, readable, idiomatic.</p>
-  </div>
-</div>
-
-<div v-click class="strength-card">
-  <div class="strength-icon">🧪</div>
-  <div class="strength-content">
-    <h3>Free Code / POCs</h3>
-    <p>Claude readily creates proof-of-concepts to validate ideas before committing to full implementation.</p>
   </div>
 </div>
 
@@ -761,25 +651,27 @@ An honest assessment
 .strength-card {
   display: flex;
   align-items: flex-start;
-  padding: 0.8rem;
-  margin-bottom: 0.8rem;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
   background: rgba(100, 255, 100, 0.1);
   border-left: 4px solid #64ff64;
   border-radius: 4px;
 }
 .strength-icon {
-  font-size: 1.8rem;
-  margin-right: 1rem;
-  min-width: 45px;
+  font-size: 1.6rem;
+  margin-right: 0.7rem;
+  min-width: 40px;
 }
 .strength-content h3 {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: bold;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 .strength-content p {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   opacity: 0.9;
+  line-height: 1.25;
+  margin-bottom: 0.6em;
 }
 </style>
 
@@ -793,27 +685,9 @@ Lessons learned from real usage
 
 ---
 
-# Disclaimer
-
-<div class="text-center mt-12">
-
-<div class="text-6xl mb-4">⚠️</div>
-
-<div class="text-2xl font-bold mb-4">
-My experience is based on small codebases
-</div>
-
-<div class="text-lg opacity-75">
-Your mileage may vary with larger, more complex projects
-</div>
-
-</div>
-
----
-
 # Key Insights
 
-<div class="mt-4">
+<div class="mt-1">
 
 <div v-click class="insight-card">
   <div class="insight-number">1</div>
@@ -843,7 +717,7 @@ Your mileage may vary with larger, more complex projects
   <div class="insight-number">4</div>
   <div class="insight-content">
     <h3>Like Pair Programming</h3>
-    <p>It feels like pair programming with a non-human partner. Be careful - same risks apply.</p>
+    <p>It feels like pair programming with a non-human partner with its own strengths and weaknesses.</p>
   </div>
 </div>
 
@@ -861,27 +735,30 @@ Your mileage may vary with larger, more complex projects
 .insight-card {
   display: flex;
   align-items: flex-start;
-  padding: 1rem;
-  margin-bottom: 0.8rem;
+  padding: 0.6rem;
+  margin-bottom: 0.6rem;
   background: rgba(78, 197, 212, 0.1);
   border-left: 4px solid #4EC5D4;
   border-radius: 4px;
 }
 .insight-number {
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #4EC5D4;
-  margin-right: 1rem;
-  min-width: 50px;
+  margin-right: 0.7rem;
+  min-width: 40px;
 }
 .insight-content h3 {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: bold;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.25rem;
 }
 .insight-content p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   opacity: 0.9;
+  line-height: 1.25;
+  margin-top: 0.6em;
+  margin-bottom: 0.4em;
 }
 </style>
 
@@ -900,7 +777,7 @@ Claude Code is <span class="text-green-400 font-bold">powerful</span>, but not <
 
 <div v-click class="mb-6">
 It's a <span class="text-blue-400 font-bold">tool</span> that amplifies your abilities,<br/>
-but you still need to be a <span class="text-purple-400 font-bold">good developer</span>.
+but you still need to be a <span class="text-purple-400 font-bold">good <span class="developer-wrapper"><span v-mark="{ at: 5, color: 'red', type: 'strike-through' }">developer</span>.</span><span v-click="5" class="engineer-replacement">engineer.</span></span>
 </div>
 
 <div v-click class="mb-6">
@@ -920,6 +797,21 @@ The future of coding is <span class="text-gradient">collaborative</span>.
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+.developer-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.developer-wrapper [class*="slidev-vclick-target"] {
+  position: relative;
+}
+.developer-wrapper svg {
+  transform: translateY(8px);
+}
+.engineer-replacement {
+  color: #4EC5D4;
+  font-weight: bold;
+  margin-left: 0.5rem;
 }
 </style>
 

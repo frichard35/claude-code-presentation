@@ -3,16 +3,15 @@
 ## Project Overview
 A 20-minute presentation about Claude Code, built WITH Claude Code (meta!), for sharing experience feedback at the company.
 
-**Target Audience**: Company colleagues
+**Target Audience**: Company colleagues (live and remote)
 **Duration**: ~20 minutes
 **Language**: English (all content, code, and interfaces)
-**Format**: Offline HTML presentation with embedded local MP4 videos
+**Format**: Offline HTML presentation (videos removed due to lag concerns)
 
 ## Technical Stack
 - **Primary**: Slidev (Vue-based, markdown slides)
-- **Fallback**: reveal.js (if video issues with Slidev)
 - **Deployment**: Local file (no server required)
-- **Videos**: Local MP4 files embedded
+- **Visuals**: Image carousel at beginning (to be implemented)
 
 ## Presentation Outline
 
@@ -21,9 +20,9 @@ A 20-minute presentation about Claude Code, built WITH Claude Code (meta!), for 
 - GitHub Copilot era: IDE integration, autocomplete-style assistance
 - Agentic coding era: Multi-file editing, command execution, codebase analysis, active iteration
 
-### Section 2: Claude Code Deep Dive (12 min) - VIDEO HEAVY
+### Section 2: Claude Code Deep Dive (12 min)
 Key features to demonstrate:
-- **Memory files**: .claudeignore, CLAUDE.md, project context management
+- **Memory files**: CLAUDE.md for project context (includes hallucination example of .claudeignore)
 - **3 modes**: Default, Accept edits on, Plan mode on
 - **Context management**: Token usage, file selection strategies
 - **Micro-iterations workflow**:
@@ -33,6 +32,8 @@ Key features to demonstrate:
   4. Test/verify
   5. Loop back
 - **MCP modules**: Model Context Protocol integrations
+
+**Note**: Videos removed. Using image carousel at beginning instead.
 
 ### Section 3: Strengths & Weaknesses (3 min)
 
@@ -63,52 +64,41 @@ Key insights:
 ### Phase 1: Project Setup ✅ COMPLETED
 - ✅ Slidev project initialized
 - ✅ Configured for offline use
-- ✅ Video embedding tested and working
 - ✅ Custom theme applied
 
 ### Phase 2: Content Creation ✅ COMPLETED
-- ✅ Created 30+ slides following outline
-- ✅ Added video placeholders (5 videos)
+- ✅ Created 25+ slides following outline
+- ✅ Removed video slides (lag concerns for live/remote audience)
 - ✅ Structured content for 20-minute delivery
+- ✅ Added hallucination demonstration (crossed-out .claudeignore)
 
 ### Phase 3: Visual Polish ✅ COMPLETED
 - ✅ Animations and transitions added (v-click)
 - ✅ Workflow diagrams created (Mermaid)
 - ✅ Custom styling for cards and layouts
-- ✅ Video integration ready
+- ✅ Red cross-out animation for hallucination example
 
 ### Phase 4: Build & Test ✅ COMPLETED
 - ✅ Built to SPA format successfully
 - ✅ Offline functionality verified
 - ✅ Ready for browser testing
-- ⏳ Waiting for actual video files
 
 ## Next Steps
 
-1. **Record Demo Videos** (5 videos needed):
-   - `demo-memory-files.mp4` - CLAUDE.md and .claudeignore demo
-   - `demo-modes.mp4` - Mode switching demonstration
-   - `demo-context.mp4` - Context management example
-   - `demo-iterations.mp4` - Micro-iterations in action
-   - `demo-mcp.mp4` - MCP modules showcase
+1. **Add Image Carousel** (To be implemented):
+   - Create carousel component at beginning of presentation
+   - Add screenshots/images to `public/images/` directory
+   - Show Claude Code features visually without video lag
+   - Recommended image specs: 1920x1080, PNG/JPG format
 
-2. **Replace Placeholder Videos**:
-   - Copy your recorded MP4 files to `claude-code-presentation/public/videos/`
-   - Recommended specs: 1920x1080 or 1280x720, H.264 MP4, 30-60 seconds each
-
-3. **Rebuild for Final Version**:
-   ```bash
-   npm run build
-   ```
-
-4. **Test the Presentation**:
+2. **Test the Presentation**:
    - Open `dist/index.html` in your browser
-   - Test all videos play correctly
    - Practice the timing (~20 minutes)
+   - Test hallucination animation reveals
    - Verify offline functionality
 
-5. **Customize if Needed**:
-   - Edit `slides.md` to adjust content
+3. **Final Polish**:
+   - Edit `slides.md` to adjust content as needed
    - Update personal details in Q&A slide
    - Run `npm run dev` for live preview while editing
 
@@ -117,12 +107,4 @@ Key insights:
 - **Modern & dynamic**: Animated transitions, engaging visuals
 - **Professional**: Company-ready presentation quality
 - **Self-contained**: Works 100% offline
-
-## Videos to Create
-List of demo videos needed (to be determined during implementation):
-- [ ] Claude Code basic workflow
-- [ ] Memory files in action
-- [ ] Mode switching demonstration
-- [ ] Context management example
-- [ ] Micro-iterations in practice
-- [ ] MCP modules showcase
+- **No video lag**: Static images instead of videos for remote audiences
