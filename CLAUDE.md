@@ -1,17 +1,25 @@
-# Claude Code Experience Sharing Presentation
+# Claude Code Presentations
 
 ## Project Overview
-A 20-minute presentation about Claude Code, built WITH Claude Code (meta!), for sharing experience feedback at the company.
+Two Slidev presentations about Claude Code, built WITH Claude Code (meta!), for sharing experience feedback at the company.
 
 **Target Audience**: Company colleagues (live and remote)
-**Duration**: ~20 minutes
 **Language**: English (all content, code, and interfaces)
-**Format**: Offline HTML presentation (videos removed due to lag concerns)
+**Format**: Offline HTML presentations (videos removed due to lag concerns)
+
+### Presentation 1 — `slides.md`
+**Duration**: ~20 minutes — Introductory, experience sharing
+`npm run dev` / `npm run build`
+
+### Presentation 2 — `slides-advanced.md`
+**Duration**: ~25 minutes — Advanced, technical deep-dive
+`npm run dev2` / `npm run build2`
 
 ## Technical Stack
-- **Primary**: Slidev (Vue-based, markdown slides)
+- **Primary**: Slidev v52 (Vue-based, markdown slides)
+- **Theme**: seriph + custom green styling (`#009c6d`)
 - **Deployment**: Local file (no server required)
-- **Visuals**: Image carousel with high-quality screenshots (46 images)
+- **Visuals**: Image carousel with high-quality screenshots (46 images) in presentation 1
 
 ## Presentation Outline
 
@@ -92,17 +100,16 @@ Key insights:
 
 ## Next Steps
 
-1. **Test the Presentation**:
-   - Open `dist/index.html` in your browser
-   - Practice the timing (~20 minutes)
-   - Test hallucination animation reveals
-   - Verify offline functionality
-   - Navigate through carousel images
+1. **Test the Presentations**:
+   - `npm run dev` / `npm run dev2` for live preview
+   - Practice timing (~20 min for slides.md, ~25 min for slides-advanced.md)
+   - Test hallucination animation reveals (slides.md)
+   - Verify offline functionality after build
 
 2. **Final Polish**:
-   - Edit `slides.md` to adjust content as needed
+   - Edit `slides.md` or `slides-advanced.md` as needed
    - Update personal details in Q&A slide
-   - Run `npm run dev` for live preview while editing
+   - Run `npm run build` / `npm run build2` for offline export
 
 ## Design Principles
 - **KISS**: Keep it simple and focused

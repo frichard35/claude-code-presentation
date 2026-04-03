@@ -5,7 +5,9 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export",
+    "dev2": "slidev slides-advanced.md --open",
+    "build2": "slidev build slides-advanced.md"
   },
   "dependencies": {
     "@slidev/cli": "^52.8.0",

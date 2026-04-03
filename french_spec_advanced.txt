@@ -1,0 +1,83 @@
+Bonjour,
+
+Je voudrais compléter cette présentation ou plutôt faire une nouvelle présentation sur le même sujet. Cela serait une version avancée autour de Claude code, tu trouveras ci-dessous tous les sujets que je voudrais aborder. Je ne sais pas si c'est possible avec slide dev d'avoir 2 présentations dans le même projet, mais c'est ce que je préfèrerais.
+
+
+Le premier sujet serait de montrer une pseudo interaction entre Claude Code et LLM, je pensais faire cela sous forme de messages, XML, c'est ce qu'il me semble le plus parlant, l'idée est de montrer comment transitent les informations, et la consommation de token. La conversation serait
+
+- (user) hello
+- (llm) Hi, how are you ?
+- (user) Can you translate in French the text inside the file enUS.txt ?
+- (llm) Sure here it is : "Bienvenue à Cardif" 
+
+Donc cela permettrait de voir que les LLMs sont stateless et de voir l'utilisation des tools.
+
+<request>
+   <messages>
+      <message>
+          <role>systeme</role>
+          <content>You are a Claude Code...</content>
+      </message>
+      <message>
+          <role>user</role>
+          <content>hello</content>
+      </message>
+      <message>
+          <role>assistant</role>
+          <content>Hi, how are you ?</content>
+      </message>
+      <message>
+          <role>user</role>
+          <content>Can you translate in French the text inside the file enUS.txt ?</content>
+      </message>
+   <messages>
+   <tools>
+      <tool>
+         <name>read_file</name>
+         <description>Use this tool to view then content of a file</description>
+         <parameters>.filepath..</parameters>
+      </tool>
+   </tool>
+<request>
+
+Propose-moi aussi en Json, le fait de l'avoir écrit me met le doute de la bonne syntaxe.
+L'important est que cela soit lisible, il sera important d'avoir de la coloration syntaxique.
+
+
+Sur la deuxième partie je voudrais rapidement évoquer des innovations d'anthropic en la matière (tooling et consommation de token), voilà en gros les 5 solutions que j'aimerais évoquer:
+
+<solutions>
+Programmatic tool calling : Au lieu que le modèle génère du JSON, il écrit du code pour exécuter plusieurs outils en séquence, réduisant la consommation de tokens de 30-50%.
+
+Dynamic filtering : Filtre automatiquement le contenu HTML pertinent avant de l'envoyer au modèle, économisant 24% de tokens.
+
+Tool search : Charge les outils dynamiquement plutôt que tous les schémas à la fois, optimisant jusqu'à 80% la fenêtre de contexte.
+
+Input Example : Pour les outils complexes avec de nombreux paramètres optionnels et des interdépendances, Anthropic a introduit le champ "input_examples". 
+
+LSP plugin: Je rajouterais aussi une 5ème solution qui n'est pas d'anthropic mais qui est intéressante
+ l'intégration avec les serveur Language Server Protocole, permet au LLM de naviguer efficacement dans une base de code.
+</solutions>
+
+
+Ensuite, j'aimerais évoquer dans une 3 eme partie, toute la terminologie complexe suivante:
+ - tool
+ - command
+ - hooks (avec le flag isolated pour dire qu'il ne partage pas le contexte)
+ - MCP servers (or just connectors)
+ - Skills
+ - agents/sub-agents (various category)
+ - marketplace / Plugins
+
+Ne pas hésiter à aller sur cette page pour avoir plus d'informations (et globalement aller sur le site de claude code pour éviter les hallucinations)
+https://code.claude.com/docs/en/features-overview 
+
+Je pense que les 3 premiers éléments (tool, command, hooks) peuvent apparaître sur une seule slide.
+
+MCP servers sur une autre slide, qui peuvent être nommée connector et/ou extension selon le contexte. L'idée des MCP Server est d'interagir avec un système externe, la norme propose 6 primitives du MCP. (Avec un tag <not only in claude code>)
+
+Skills sur une slide, avec la vision extraite d'un zip, montrant que cela peut contenir du code. (Avec un tag <not only in claude code>) et mentionner https://skills.sh
+
+1 slide sur les différents type d'agent (subagent, agent team, etc) relire https://code.claude.com/docs/en/features-overview mettre un flag isolated sur les sub-agent pour dire qu'il ne partage pas le contexte)
+
+1 slide sur marketplace / Plugins (le fait que le plugin peut être une agrégation d'un agent, un mcp server, un skills, etc

@@ -1,0 +1,46 @@
+J'ai utilisé Claude code pendant quelques semaines de manière personnelle, j'aimerais faire un retour d'expérience dans mon entreprise.
+
+J'espérais aussi que la présentation elle-même soit développée avec Claude code. J'ai besoin de conseils pour savoir quelle technologie choisir, l'idée est que cela soit assez impressionnant.
+
+Vu que Claude code ne fonctionne pas à mon travail, je pensais faire des vidéos, donc la présentation doit pouvoir incorporer des vidéos.
+
+La présentation doit être en anglais, toutes nos interactions seront en anglais.
+
+La présentation dure 20 minutes environ.
+
+J'aimerais parler des choses suivantes :
+
+ - historique des outils d'IA associés au code (2 min).
+	- Des prompts ChatGPT (déconnecté de l'IDE),
+	- en passant par les intégrations comme Github Copilot (intégration IDE, comme l'autocomplétion)
+	- pour finir par l'agentic coding (multi files edition, execute commande, analyser des bases de code, itérer, collaboration active).
+
+ - fonctionnement global de Claude Code (12 min), cette partie contiendra les vidéos.
+	- les fichiers mémoires,
+	- les 3 modes "Default, Accept edits on, Plan mode on",
+	- la gestion du contexte.
+	- Les principe des micros itérations (rassembler le contexte, modifier, contrôle de surface (linter), tester / vérifier, boucler)
+	- les modules MCP (
+
+ - Force et faiblesse (3 min)
+	faiblesses:
+		Les hallucinations existe toujours, même si les itérations corrigent une partie du problème.
+		"Claude Code" souvent trop entreprenant, il faut souvent le freiner et lui demander de faire des choses plus simples.
+		Le développeur peut devenir fainéant et trop confiant envers l'IA. A l'inverse le développeur peut devenir trop ambitieux et commencer trop de chose, ce qui peut amener une surcharge mentale.
+
+	Force:
+		Rapidité de mise en oeuvre
+		Qualité de l'écriture, comme pour les language humains, les hallucinations existent mais c'est bien écrit.
+		Code gratuit: "Claude Code" propose souvent de valider une idée par un petit POC,
+		Une recherche internet très puissante, On passe beaucoup moins de temps sur google / stackoverflow.
+		Cela peut permettre d'être plus ambitieux et développer de nouvelle fonctions (attention néanmoins à la dette technique)
+
+ - Mon avis: (3 min)
+	Disclaimer, j'ai fais mes tests sur des base de code petites.
+	Le contexte est vraiment centrale, c'est le facteur souvent limitant.
+	J'ai commencé à l'utiliser de manière "vibe coding" en mode auto accept, et arrêté car le design interne n'était pas bon, même si globalement cela fonctionnait.
+	L'importance d'avoir des tests pour pouvoir itérer sans consommer trop de token.
+	Cela ressemble a du pair programming mais avec une personne non humaine donc attention.
+	Le retour arrière est compliqué quand vous avez commencé à travaillé comme cela.
+
+N'hésites pas à me poser des questions pour avoir une meilleure compréhension du sujet.

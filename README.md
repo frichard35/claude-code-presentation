@@ -1,56 +1,68 @@
-# Claude Code Experience Feedback Presentation
+# Claude Code Presentations
 
-A comprehensive 20-minute presentation about Claude Code, built WITH Claude Code (meta!).
+Two presentations about Claude Code, built WITH Claude Code (meta!).
 
-## 🎯 Overview
+## Presentations
 
-This presentation covers:
+### 1. `slides.md` — Productivity Boost or Tech Debt Factory? (20 min)
+
+An introductory presentation covering:
 - **History of AI Coding Tools** (2 min) - Evolution from ChatGPT to agentic coding
 - **Claude Code Deep Dive** (12 min) - Features, modes, context management, workflow
 - **Strengths & Weaknesses** (3 min) - Honest assessment
 - **Personal Opinion** (3 min) - Lessons learned from real usage
 
-## 🚀 Quick Start
+```bash
+npm run dev    # dev server → http://localhost:3030
+npm run build  # build to dist/
+```
 
-### Development Mode
+### 2. `slides-advanced.md` — Under the Hood (25 min)
+
+An advanced presentation covering:
+- **LLM Communication** (8 min) - Stateless requests, tool use & token growth (JSON walkthrough)
+- **Anthropic Innovations** (6 min) - Programmatic tool calling, dynamic filtering, tool search, input examples, LSP
+- **Ecosystem Terminology** (12 min) - Tools, commands, hooks, MCP servers, skills, agents, plugins/marketplace
+
+```bash
+npm run dev2    # dev server → http://localhost:3030
+npm run build2  # build to dist/
+```
+
+## Quick Start
+
 ```bash
 npm install
-npm run dev
+npm run dev   # or dev2 for the advanced presentation
 ```
-
-The presentation will open in your browser at `http://localhost:3030`
-
-### Build for Offline Use
-```bash
-npm run build
-```
-
-The built presentation will be in the `dist/` folder. You can:
-- Open `dist/index.html` directly in a browser (works offline)
-- Copy the entire `dist/` folder to share
-- Host the `dist/` folder on any web server
 
 ## 🖼️ Visual Content
 
-**Note**: Videos have been removed from the presentation due to potential lag issues for live/remote audiences. Instead, the presentation features an **image carousel** at the beginning to showcase Claude Code features.
+**Note**: Videos have been removed from presentation 1 due to potential lag issues for live/remote audiences. Instead, it features an **image carousel** at the beginning with 46 screenshots.
 
-### Image Carousel
+Images are stored in `public/carousel1/` (high-quality JPG). Navigate with arrow keys or presentation remote.
 
-The presentation includes a high-quality image carousel (slide 2) with 46 screenshots showing:
-- Claude Code interface and features
-- Key capabilities in action
-- Workflow examples
-- Context management visuals
-
-Images are stored in `public/carousel1/` directory (high-quality JPG format). Navigate through the carousel using arrow keys or presentation remote.
-
-## 📊 Presentation Structure
+## Project Structure
 
 ```
-slides.md (30+ slides)
+slides.md               # Presentation 1
+slides-advanced.md      # Presentation 2
+public/
+  carousel1/            # 47 screenshots for the image carousel
+  images/               # Context management screenshot
+styles/
+  custom.css
+  index.css
+french_spec.txt         # Spec used to build presentation 1
+french_spec_advanced.txt # Spec used to build presentation 2
+```
+
+## 📊 Presentation 1 Structure
+
+```
+slides.md
 ├── Title & Agenda
 ├── Part 1: History (3 slides)
-│   ├── Timeline of AI coding tools
 │   └── Three eras: ChatGPT → Copilot → Agentic
 ├── Part 2: Claude Code (12 slides)
 │   ├── Memory files (CLAUDE.md with hallucination example)
@@ -62,10 +74,29 @@ slides.md (30+ slides)
 │   ├── Weaknesses
 │   └── Strengths
 ├── Part 4: Opinion (3 slides)
-│   ├── Disclaimer
-│   ├── Key insights
-│   └── Final thoughts
+│   └── Key insights & final thoughts
 └── Q&A & Thank you
+```
+
+## 📊 Presentation 2 Structure
+
+```
+slides-advanced.md
+├── Title & Agenda
+├── Part 1: LLM Communication (4 slides)
+│   ├── Turn 1: hello → Hi, how are you?
+│   ├── Turn 2: translate → tool_use call
+│   └── Turn 3: tool_result → Bienvenue à Cardif
+├── Part 2: Innovations (4 slides)
+│   ├── Overview (5 cards)
+│   ├── Token savings (programmatic, filtering, tool search)
+│   └── Accuracy & navigation (input_examples, LSP)
+└── Part 3: Ecosystem (6 slides)
+    ├── Tool / Command / Hook
+    ├── MCP Servers (6 primitives)
+    ├── Skills
+    ├── Agents & Sub-agents
+    └── Marketplace & Plugins
 ```
 
 ## 🎨 Customization
