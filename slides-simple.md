@@ -9,7 +9,7 @@ drawings:
   persist: false
 transition: slide-left
 mdc: true
-duration: 5min
+duration: 10min
 fonts:
   sans: 'Inter'
   serif: 'Inter'
@@ -110,21 +110,21 @@ class: text-center
   <div class="text-4xl mb-2">🚗</div>
   <div class="text-xl font-bold mb-2">The Standard Interface</div>
   <div class="text-sm opacity-75">Agentic tools today</div>
-  <div class="text-xs opacity-50 mt-1">2 minutes</div>
+  <div class="text-xs opacity-50 mt-1">4 minutes</div>
 </div>
 
 <div v-click>
   <div class="text-4xl mb-2">🧩</div>
-  <div class="text-xl font-bold mb-2">Two Tools to Know</div>
+  <div class="text-xl font-bold mb-2">Two Concepts to Know</div>
   <div class="text-sm opacity-75">MCP servers & Agent Skills</div>
-  <div class="text-xs opacity-50 mt-1">2 minutes</div>
+  <div class="text-xs opacity-50 mt-1">4 minutes</div>
 </div>
 
 <div v-click>
   <div class="text-4xl mb-2">⌨️</div>
   <div class="text-xl font-bold mb-2">opencode in action</div>
   <div class="text-sm opacity-75">Live demo</div>
-  <div class="text-xs opacity-50 mt-1">1 minute</div>
+  <div class="text-xs opacity-50 mt-1">2 minutes</div>
 </div>
 
 </div>
@@ -176,16 +176,16 @@ Agentic tools are now the standard way to talk to an LLM
 
 ---
 
-# The Landscape
+# Landscape Overview
 
-<div class="grid grid-cols-5 gap-3 mt-6">
+<div class="grid grid-cols-3 gap-3 mt-4">
 
 <div v-click class="tool-card">
   <div class="tool-logo">🤖</div>
   <div class="tool-name">Claude Code<br/><span class="tool-evolution">→ Claude Cowork</span></div>
   <div class="tool-maker">Anthropic</div>
   <div class="tool-note">The first. Cowork born when non-devs started using it — packaged for teams & entities.</div>
-  <div class="avail-badge avail-green">✓ available</div>
+  <div class="avail-badge avail-orange">🔄 négociation en cours</div>
 </div>
 
 <div v-click class="tool-card">
@@ -208,8 +208,8 @@ Agentic tools are now the standard way to talk to an LLM
   <div class="tool-logo">🏢</div>
   <div class="tool-name">IBM Bob</div>
   <div class="tool-maker">IBM</div>
-  <div class="tool-note">Currently in beta testing internally.</div>
-  <div class="avail-badge avail-orange">⚡ beta test</div>
+  <div class="tool-note">Experimentation currently underway internally.</div>
+  <div class="avail-badge avail-orange">🧪 expérimentation en cours</div>
 </div>
 
 <div v-click class="tool-card tool-card-highlight">
@@ -220,21 +220,34 @@ Agentic tools are now the standard way to talk to an LLM
   <div class="avail-badge avail-green">✓ available</div>
 </div>
 
+<div v-click class="tool-card tool-card-more">
+  <div class="tool-logo">➕</div>
+  <div class="tool-name">And many more…</div>
+  <div class="tool-maker">Community & Big Tech</div>
+  <div class="tool-note">Gemini CLI (Google), Continue (VS Code), OpenClaude, Amp, Cline, Cursor, Windsurf…</div>
+  <div class="avail-badge avail-gray">ecosystem growing fast</div>
+</div>
+
 </div>
 
 <style>
 .tool-card {
   border: 2px solid rgba(141, 201, 171, 0.4);
-  border-radius: 8px; padding: 0.8rem 0.6rem;
+  border-radius: 8px; padding: 0.7rem 0.6rem;
   text-align: center;
-  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  display: flex; flex-direction: column; align-items: center; gap: 0.35rem;
   background: rgba(141, 201, 171, 0.04);
 }
 .tool-card-highlight {
   border-color: #009c6d;
   background: rgba(0, 156, 109, 0.08);
 }
-.tool-logo { font-size: 1.8rem; line-height: 1; }
+.tool-card-more {
+  border-color: rgba(100, 116, 139, 0.4);
+  background: rgba(100, 116, 139, 0.04);
+  border-style: dashed;
+}
+.tool-logo { font-size: 1.6rem; line-height: 1; }
 .tool-name { font-size: 0.78rem; font-weight: 700; line-height: 1.3; }
 .tool-evolution { font-size: 0.65rem; font-weight: 400; opacity: 0.7; }
 .tool-maker { font-size: 0.65rem; opacity: 0.55; }
@@ -266,21 +279,20 @@ Agentic tools are now the standard way to talk to an LLM
 
 <div v-click class="grid grid-cols-2 gap-6 mt-6">
   <div class="factor-card factor-card-green">
-    <div class="factor-title">✓ What the chassis brings</div>
+    <div class="factor-title">🚗 Chassis are now nearly feature-equivalent</div>
     <ul class="factor-list">
-      <li>File access & editing</li>
-      <li>Command execution</li>
-      <li>Tool integrations (MCP)</li>
-      <li>Memory & context management</li>
+      <li>All major tools read files, run commands, use MCP</li>
+      <li>The real differentiator: <strong>open source vs. closed source</strong></li>
+      <li>And <strong>popularity</strong> — community, plugins, integrations</li>
+      <li>Some vendors use the chassis for <strong>post-training</strong> (fine-tuning on real agentic tasks) — a growing edge</li>
     </ul>
   </div>
   <div class="factor-card factor-card-orange">
-    <div class="factor-title">⚠️ What only the LLM can provide</div>
+    <div class="factor-title">⚠️ The engine gap: frontier vs. small models</div>
     <ul class="factor-list">
-      <li>Reasoning quality</li>
-      <li>Domain knowledge</li>
-      <li>Code correctness</li>
-      <li>Avoiding hallucinations</li>
+      <li><strong>Frontier models</strong> — Claude Opus/Sonnet, GPT-5, Kimi: deep reasoning, large context, best results</li>
+      <li><strong>Small models</strong> — Gemma, Mistral Mini, GPT-OSS: faster & cheaper, but more limited on complex tasks</li>
+      <li>Choosing the right model matters as much as the chassis</li>
     </ul>
   </div>
 </div>
@@ -311,7 +323,7 @@ Agentic tools are now the standard way to talk to an LLM
 layout: section
 ---
 
-# Part 2: Two Tools to Know
+# Part 2: Two Concepts to Know
 
 MCP Servers & Agent Skills
 
@@ -395,7 +407,7 @@ MCP Servers & Agent Skills
 </div>
 
 <div v-click class="mcp-example">
-  <span class="mcp-server">☁️ AWS</span>
+  <span class="mcp-server">☁️ IBM Cloud</span>
   <span class="mcp-prompt">"Deploy the latest version to our UAT account"</span>
 </div>
 
@@ -405,7 +417,7 @@ MCP Servers & Agent Skills
 </div>
 
 <div v-click class="mcp-example">
-  <span class="mcp-server">🎭 Playwright</span>
+  <span class="mcp-server">🌐 Chrome Dev Tools</span>
   <span class="mcp-prompt">"Improve the design of this page"</span>
 </div>
 
@@ -413,14 +425,9 @@ MCP Servers & Agent Skills
 
 <div v-click>
 
-### Why it matters
+### The USB port of AI Agents
 
-<div class="teaching-point mt-2">
-  💡 No more copy-pasting data between tools.<br/>
-  The AI <strong>reads and writes directly</strong> in your systems.
-</div>
-
-<div class="mcp-ecosystem mt-4">
+<div class="mcp-ecosystem mt-2">
   <div class="mcp-eco-title">Ecosystem</div>
   <div class="mcp-eco-cats">
     <span class="eco-tag">🗄️ Databases</span>
@@ -501,10 +508,10 @@ MCP Servers & Agent Skills
 </div>
 
 <div v-click class="skill-example">
-  <div class="skill-icon">📝</div>
+  <div class="skill-icon">📐</div>
   <div class="skill-body">
-    <div class="skill-name">Meeting recap</div>
-    <div class="skill-prompt">"Summarize this meeting" → Structured recap with decisions, action items, and owners — ready to share.</div>
+    <div class="skill-name">Application templating</div>
+    <div class="skill-prompt">"Bootstrap a new microservice" → Generates the full project structure following company standards: architecture, naming, CI config, README.</div>
   </div>
 </div>
 
