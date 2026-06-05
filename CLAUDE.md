@@ -15,6 +15,12 @@ Two Slidev presentations about Claude Code, built WITH Claude Code (meta!), for 
 **Duration**: ~25 minutes — Advanced, technical deep-dive
 `npm run dev2` / `npm run build2`
 
+### Presentation 3 — `slides-simple.md`
+**Duration**: ~5 minutes — Short overview for a non-technical audience
+**Title**: *The Engine & the Chassis — How We Talk to AI Today*
+**Topics**: Agentic tools landscape, MCP servers, Agent Skills, opencode demo (Part 3 to be completed by presenter)
+`npm run dev3` / `npm run build3`
+
 ## Technical Stack
 - **Primary**: Slidev v52 (Vue-based, markdown slides)
 - **Theme**: seriph + custom green styling (`#009c6d`)

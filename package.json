@@ -7,12 +7,17 @@
     "dev": "slidev --open",
     "export": "slidev export",
     "dev2": "slidev slides-advanced.md --open",
-    "build2": "slidev build slides-advanced.md"
+    "build2": "slidev build slides-advanced.md",
+    "dev3": "slidev slides-simple.md --open",
+    "build3": "slidev build slides-simple.md"
   },
   "dependencies": {
     "@slidev/cli": "^52.8.0",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "vue": "^3.5.24"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.60.0"
   }
 }
