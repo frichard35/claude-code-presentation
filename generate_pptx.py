@@ -237,14 +237,14 @@ def slide_analogy(prs, slide_num, total):
 def slide_landscape(prs, slide_num, total):
     slide = prs.slides.add_slide(blank_layout(prs))
     add_rect(slide, 0, 0, W, H, fill_color=GRAY_BG)
-    add_textbox(slide, "The Landscape",
+    add_textbox(slide, "Landscape Overview",
                 Inches(0.6), Inches(0.25), Inches(12), Inches(0.55),
                 font_size=28, bold=True, color=GREEN)
 
     tools = [
         ("🤖", "Claude Code\n→ Claude Cowork", "Anthropic",
          "The first agentic tool. Cowork born when non-devs started using it — packaged for teams & entities.",
-         "✓ available", GREEN),
+         "🔄 negotiation in progress", ORANGE),
         ("🧠", "Codex", "OpenAI",
          "Unified CLI + open-source option — two strong bets from OpenAI.",
          "✗ not available", RGBColor(0x64, 0x74, 0x8B)),
@@ -252,37 +252,42 @@ def slide_landscape(prs, slide_num, total):
          "Our strategic partner's agentic tool.",
          "✓ available", GREEN),
         ("🏢", "IBM Bob", "IBM",
-         "Currently in beta testing internally at BNP Paribas.",
-         "⚡ beta test", ORANGE),
+         "Experimentation currently underway internally.",
+         "🧪 experimentation in progress", ORANGE),
         ("⚙️", "opencode", "Open source",
          "Most popular open-source agentic tool. Huge community ecosystem.",
          "✓ available", GREEN),
+        ("➕", "And many more…", "Community & Big Tech",
+         "Gemini CLI (Google), Continue (VS Code), OpenClaude, Amp, Cline, Cursor, Windsurf…",
+         "ecosystem growing fast", RGBColor(0x64, 0x74, 0x8B)),
     ]
 
-    col_w = Inches(2.3)
-    col_h = Inches(5.2)
+    # 3x2 grid
+    col_w = Inches(4.0)
+    col_h = Inches(2.8)
+    cols = 3
     for i, (icon, name, maker, note, badge, badge_color) in enumerate(tools):
-        x = Inches(0.35) + i * Inches(2.56)
-        y = Inches(1.0)
-        bg_color = RGBColor(0xF0, 0xFB, 0xF6) if badge_color == GREEN else RGBColor(0xF8, 0xF9, 0xFA)
+        col = i % cols
+        row = i // cols
+        x = Inches(0.4) + col * Inches(4.35)
+        y = Inches(1.0) + row * Inches(3.05)
+        bg_color = RGBColor(0xF0, 0xFB, 0xF6) if badge_color == GREEN else (
+            RGBColor(0xFF, 0xF8, 0xF0) if badge_color == ORANGE else RGBColor(0xF8, 0xF9, 0xFA))
+        line_style = Pt(1.5)
         add_rect(slide, x, y, col_w, col_h,
-                 fill_color=bg_color,
-                 line_color=badge_color, line_width=Pt(1.5))
-        # Icon
-        add_textbox(slide, icon, x, y + Inches(0.15), col_w, Inches(0.5),
-                    font_size=22, align=PP_ALIGN.CENTER)
-        # Name
-        add_textbox(slide, name, x + Inches(0.1), y + Inches(0.65), col_w - Inches(0.2), Inches(0.6),
-                    font_size=12, bold=True, color=DARK, align=PP_ALIGN.CENTER)
-        # Maker
-        add_textbox(slide, maker, x + Inches(0.1), y + Inches(1.3), col_w - Inches(0.2), Inches(0.3),
-                    font_size=10, color=RGBColor(0x88, 0x88, 0x88), align=PP_ALIGN.CENTER)
-        # Note
-        add_textbox(slide, note, x + Inches(0.1), y + Inches(1.65), col_w - Inches(0.2), Inches(2.2),
-                    font_size=10, color=DARK, align=PP_ALIGN.CENTER)
-        # Badge
-        add_textbox(slide, badge, x + Inches(0.1), y + Inches(3.9), col_w - Inches(0.2), Inches(0.35),
-                    font_size=10, bold=True, color=badge_color, align=PP_ALIGN.CENTER)
+                 fill_color=bg_color, line_color=badge_color, line_width=line_style)
+        add_textbox(slide, f"{icon}  {name}", x + Inches(0.15), y + Inches(0.12),
+                    col_w - Inches(0.3), Inches(0.55),
+                    font_size=13, bold=True, color=DARK)
+        add_textbox(slide, maker, x + Inches(0.15), y + Inches(0.68),
+                    col_w - Inches(0.3), Inches(0.25),
+                    font_size=10, color=RGBColor(0x88, 0x88, 0x88))
+        add_textbox(slide, note, x + Inches(0.15), y + Inches(0.95),
+                    col_w - Inches(0.3), Inches(1.3),
+                    font_size=10, color=DARK)
+        add_textbox(slide, badge, x + Inches(0.15), y + col_h - Inches(0.45),
+                    col_w - Inches(0.3), Inches(0.35),
+                    font_size=10, bold=True, color=badge_color)
 
     add_slide_number(slide, slide_num, total)
     return slide
@@ -310,20 +315,23 @@ def slide_limiting_factor(prs, slide_num, total):
 
     # Two columns
     card(slide, Inches(0.6), Inches(2.9), Inches(5.8), Inches(3.8),
-         "✓  What the chassis brings",
-         ["• File access & editing",
-          "• Command execution",
-          "• Tool integrations (MCP)",
-          "• Memory & context management"],
-         border_color=GREEN, title_color=GREEN, body_size=14)
+         "🚗  Chassis are now nearly feature-equivalent",
+         ["• All major tools read files, run commands, use MCP",
+          "• Real differentiator: open source vs. closed source",
+          "• And popularity — community, plugins, integrations",
+          "• Some vendors use the chassis for post-training",
+          "  (fine-tuning on real agentic tasks) — a growing edge"],
+         border_color=GREEN, title_color=GREEN, body_size=13)
 
     card(slide, Inches(6.9), Inches(2.9), Inches(5.8), Inches(3.8),
-         "⚠️  What only the LLM can provide",
-         ["• Reasoning quality",
-          "• Domain knowledge",
-          "• Code correctness",
-          "• Avoiding hallucinations"],
-         border_color=ORANGE, title_color=ORANGE, body_size=14)
+         "⚠️  The engine gap: frontier vs. small models",
+         ["• Frontier models — Claude Opus/Sonnet, GPT-5, Kimi:",
+          "  deep reasoning, large context, best results",
+          "• Small models — Gemma, Mistral Mini, GPT-OSS:",
+          "  faster & cheaper, but limited on complex tasks",
+          "• Choosing the right model matters as much",
+          "  as the chassis"],
+         border_color=ORANGE, title_color=ORANGE, body_size=13)
 
     add_slide_number(slide, slide_num, total)
     return slide
@@ -384,9 +392,9 @@ def slide_mcp(prs, slide_num, total):
     examples = [
         ("🗄️ Postgres", '"How many users were created last month?"'),
         ("📚 Context7", '"Migrate this app using the official Angular 20 docs"'),
-        ("☁️ AWS", '"Deploy the latest version to our UAT account"'),
+        ("☁️ IBM Cloud", '"Deploy the latest version to our UAT account"'),
         ("📋 JIRA", '"Create a bug ticket for this issue"'),
-        ("🎭 Playwright", '"Improve the design of this page"'),
+        ("🌐 Chrome Dev Tools", '"Improve the design of this page"'),
     ]
     for i, (server, prompt) in enumerate(examples):
         y = Inches(1.55) + i * Inches(0.9)
@@ -399,19 +407,11 @@ def slide_mcp(prs, slide_num, total):
                     Inches(4.1), Inches(0.6), font_size=12, color=DARK, italic=True)
 
     # Right column
-    add_textbox(slide, "Why it matters",
+    add_textbox(slide, "The USB port of AI Agents",
                 Inches(7.1), Inches(1.0), Inches(5.6), Inches(0.4),
                 font_size=16, bold=True, color=DARK)
 
-    add_rect(slide, Inches(7.1), Inches(1.55), Inches(5.6), Inches(1.2),
-             fill_color=RGBColor(0xF0, 0xFB, 0xF6), line_color=GREEN, line_width=Pt(1.5))
-    add_textbox(slide,
-                "💡  No more copy-pasting data between tools.\n"
-                "The AI reads and writes directly in your systems.",
-                Inches(7.25), Inches(1.65), Inches(5.3), Inches(1.0),
-                font_size=13, color=DARK)
-
-    card(slide, Inches(7.1), Inches(3.0), Inches(5.6), Inches(3.6),
+    card(slide, Inches(7.1), Inches(1.55), Inches(5.6), Inches(5.0),
          "Ecosystem",
          ["🗄️ Databases   ☁️ Cloud   📊 SaaS",
           "📖 Documentation   🔧 Dev tools",
@@ -441,9 +441,9 @@ def slide_skills(prs, slide_num, total):
         ("🎨", "Brand voice",
          '"Write a client email about the delay" → Drafted in the company tone, '
          'with correct sign-off, disclaimers, and style.'),
-        ("📝", "Meeting recap",
-         '"Summarize this meeting" → Structured recap with decisions, '
-         'action items, and owners — ready to share.'),
+        ("📐", "Application templating",
+         '"Bootstrap a new microservice" → Generates the full project structure '
+         'following company standards: architecture, naming, CI config, README.'),
     ]
     for i, (icon, name, desc) in enumerate(examples):
         y = Inches(1.55) + i * Inches(1.5)
@@ -571,7 +571,7 @@ def build():
     slide_analogy(prs, 4, total)                                             # 4
     slide_landscape(prs, 5, total)                                           # 5
     slide_limiting_factor(prs, 6, total)                                     # 6
-    slide_section(prs, 2, "Two Tools to Know",                               # 7
+    slide_section(prs, 2, "Two Concepts to Know",                             # 7
                   "MCP Servers  ·  Agent Skills", 7, total)
     slide_two_standards(prs, 8, total)                                       # 8
     slide_mcp(prs, 9, total)                                                 # 9

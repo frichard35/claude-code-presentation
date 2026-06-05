@@ -214,7 +214,7 @@ Agentic tools are now the standard way to talk to an LLM
 
 <div v-click class="tool-card tool-card-highlight">
   <div class="tool-logo">⚙️</div>
-  <div class="tool-name">opencode</div>
+  <div class="tool-name">Opencode</div>
   <div class="tool-maker">Open source</div>
   <div class="tool-note">Most popular open-source option. Huge ecosystem.</div>
   <div class="avail-badge avail-green">✓ available</div>
@@ -569,15 +569,15 @@ MCP Servers & Agent Skills
 layout: section
 ---
 
-# Part 3: opencode in action
+# Part 3: Opencode in action
 
-Live demo
+Usage Examples
 
 ---
 
 <!-- TEMPLATE SLIDE 1 — à compléter par l'orateur -->
 
-# opencode — Demo
+# Opencode — Usage Examples
 
 <div class="demo-placeholder">
 
