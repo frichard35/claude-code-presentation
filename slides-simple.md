@@ -185,7 +185,7 @@ Agentic tools are now the standard way to talk to an LLM
   <div class="tool-name">Claude Code<br/><span class="tool-evolution">→ Claude Cowork</span></div>
   <div class="tool-maker">Anthropic</div>
   <div class="tool-note">The first. Cowork born when non-devs started using it — packaged for teams & entities.</div>
-  <div class="avail-badge avail-orange">🔄 négociation en cours</div>
+  <div class="avail-badge avail-orange">🔄 negotiation in progress</div>
 </div>
 
 <div v-click class="tool-card">
@@ -209,7 +209,7 @@ Agentic tools are now the standard way to talk to an LLM
   <div class="tool-name">IBM Bob</div>
   <div class="tool-maker">IBM</div>
   <div class="tool-note">Experimentation currently underway internally.</div>
-  <div class="avail-badge avail-orange">🧪 expérimentation en cours</div>
+  <div class="avail-badge avail-orange">🧪 experimentation in progress</div>
 </div>
 
 <div v-click class="tool-card tool-card-highlight">
